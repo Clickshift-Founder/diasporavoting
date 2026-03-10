@@ -1,0 +1,14 @@
+diaspora-voting/          ← your project folder name
+│
+├── app/
+│   ├── page.tsx          ← your landing page (the JSX I built)
+│   ├── layout.tsx        ← root layout (boilerplate)
+│   └── api/
+│       ├── sign/
+│       │   └── route.ts  ← API: receives form → saves to Airtable
+│       └── stats/
+│           └── route.ts  ← API: returns live sig + download counts
+│
+├── .env.local            ← your secret keys (never commit this)
+├── package.json
+└── next.config.js
