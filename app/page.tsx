@@ -381,8 +381,6 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
                 ⚠️ {errors.submit}
               </p>
             )}
-
-            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "11.5px", lineHeight: "1.5" }}>
               
 
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "11.5px", lineHeight: "1.5" }}>
