@@ -8,7 +8,7 @@ export async function GET() {
   try {
     // Count all records in the table
     const records = await base(process.env.AIRTABLE_TABLE_NAME!)
-      .select({ fields: ["Name"] })
+      .select({ fields: ["name"] })
       .all();
 
     const sigCount = records.length;

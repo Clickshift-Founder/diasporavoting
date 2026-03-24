@@ -166,15 +166,43 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
     return e;
   };
 
-  const handleSubmit = async () => {
-    const e = validate();
-    if (Object.keys(e).length) { setErrors(e); return; }
-    setLoading(true);
-    await new Promise(r => setTimeout(r, 1400));
-    setLoading(false);
-    setStep(2);
-    onSigned();
-  };
+          {errors.submit && (
+          <p style={{ color: "#e74c3c", fontSize: "13px", textAlign: "center" }}>
+            {errors.submit}
+          </p>
+        )}
+
+        // ✅ FIXED — actually sends data to Airtable
+        const handleSubmit = async () => {
+          const e = validate();
+          if (Object.keys(e).length) { setErrors(e); return; }
+          setLoading(true);
+
+          try {
+            const res = await fetch("/api/sign", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(form),
+            });
+
+            if (!res.ok) {
+              const data = await res.json();
+              console.error("Sign error:", data);
+              setErrors({ submit: "Something went wrong. Please try again." });
+              setLoading(false);
+              return;
+            }
+
+            setLoading(false);
+            setStep(2);
+            onSigned();
+
+          } catch (err) {
+            console.error("Network error:", err);
+            setErrors({ submit: "Connection error. Please try again." });
+            setLoading(false);
+          }
+        };
 
   const inputStyle = (field: string) => ({
     width: "100%",
