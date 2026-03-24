@@ -147,7 +147,7 @@ function AnimatedNumber({ target, duration = 2000, prefix = "", suffix = "" }: A
 
 // ─── PETITION MODAL ──────────────────────────────────────────────────────────
 function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
-  const [step, setStep] = useState(1); // 1=form, 2=thank you
+  const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>({ name: "", email: "", country: "", organization: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string | null>>({});
@@ -158,52 +158,48 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
     "Australia","Sweden","Norway","Spain","Belgium","Switzerland","Other"
   ];
 
+  // ✅ STEP 1 — validate
   const validate = () => {
-  const e: Record<string, string> = {};
+    const e: Record<string, string> = {};
     if (!form.name.trim()) e.name = "Please enter your name";
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = "Valid email required";
     if (!form.country) e.country = "Please select your country";
     return e;
   };
 
-          {errors.submit && (
-          <p style={{ color: "#e74c3c", fontSize: "13px", textAlign: "center" }}>
-            {errors.submit}
-          </p>
-        )}
+  // ✅ STEP 2 — handleSubmit (calls the API)
+  const handleSubmit = async () => {
+    const e = validate();
+    if (Object.keys(e).length) { setErrors(e); return; }
+    setLoading(true);
 
-        // ✅ FIXED — actually sends data to Airtable
-        const handleSubmit = async () => {
-          const e = validate();
-          if (Object.keys(e).length) { setErrors(e); return; }
-          setLoading(true);
+    try {
+      const res = await fetch("/api/sign", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-          try {
-            const res = await fetch("/api/sign", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(form),
-            });
+      if (!res.ok) {
+        const data = await res.json();
+        console.error("Sign error:", data);
+        setErrors({ submit: "Something went wrong. Please try again." });
+        setLoading(false);
+        return;
+      }
 
-            if (!res.ok) {
-              const data = await res.json();
-              console.error("Sign error:", data);
-              setErrors({ submit: "Something went wrong. Please try again." });
-              setLoading(false);
-              return;
-            }
+      setLoading(false);
+      setStep(2);
+      onSigned();
 
-            setLoading(false);
-            setStep(2);
-            onSigned();
+    } catch (err) {
+      console.error("Network error:", err);
+      setErrors({ submit: "Connection error. Please try again." });
+      setLoading(false);
+    }
+  };
 
-          } catch (err) {
-            console.error("Network error:", err);
-            setErrors({ submit: "Connection error. Please try again." });
-            setLoading(false);
-          }
-        };
-
+  // ✅ STEP 3 — inputStyle helper
   const inputStyle = (field: string) => ({
     width: "100%",
     padding: "12px 16px",
@@ -217,6 +213,7 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
     transition: "border-color 0.2s",
   });
 
+ 
   return (
     <div style={{
       position: "fixed", inset: 0, zIndex: 1000,
