@@ -8,7 +8,6 @@ export async function POST(req: NextRequest) {
   try {
     const { name, email, country, organization, message } = await req.json();
 
-    // Basic validation
     if (!name || !email || !country) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -16,16 +15,18 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Save to Airtable
+
+    console.log("Sending to Airtable:", { name, email, country, organization, message });
+
     await base(process.env.AIRTABLE_TABLE_NAME!).create([
       {
         fields: {
-          Name: name,
-          Email: email,
-          Country: country,
-          organization: organization,
-          Message: message || "",
-          Source: "Landing Page",
+          name: name,               // ← lowercase, matches Airtable
+          email: email,             // ← lowercase
+          country: country,         // ← lowercase
+          organization: organization || "",  // ← lowercase, not Occupation
+          message: message || "",   // ← lowercase
+          source: "Landing Page",   // ← lowercase
         },
       },
     ]);
