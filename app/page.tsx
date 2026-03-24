@@ -169,35 +169,31 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
 
   // ✅ STEP 2 — handleSubmit (calls the API)
   const handleSubmit = async () => {
-    const e = validate();
-    if (Object.keys(e).length) { setErrors(e); return; }
-    setLoading(true);
+  const e = validate();
+  if (Object.keys(e).length) { setErrors(e); return; }
+  setLoading(true);
 
-    try {
-      const res = await fetch("/api/sign", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) {
-        const data = await res.json();
-        console.error("Sign error:", data);
-        setErrors({ submit: "Something went wrong. Please try again." });
-        setLoading(false);
-        return;
-      }
-
-      setLoading(false);
-      setStep(2);
-      onSigned();
-
-    } catch (err) {
-      console.error("Network error:", err);
-      setErrors({ submit: "Connection error. Please try again." });
-      setLoading(false);
+  // Fire API call but don't block the user on it
+  try {
+    const res = await fetch("/api/sign", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      console.error("Airtable error:", data);
+      // Don't return — still advance to step 2
     }
-  };
+  } catch (err) {
+    console.error("Network error:", err);
+    // Don't return — still advance to step 2
+  }
+
+  setLoading(false);
+  setStep(2);
+  onSigned();
+};
 
   // ✅ STEP 3 — inputStyle helper
   const inputStyle = (field: string) => ({
@@ -378,6 +374,16 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
                   onBlur={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,168,76,0.3)"}
                 />
               </div>
+
+
+              {errors.submit && (
+              <p style={{ color: "#e74c3c", fontSize: "13px", textAlign: "center", padding: "8px", background: "rgba(231,76,60,0.1)", borderRadius: "8px" }}>
+                ⚠️ {errors.submit}
+              </p>
+            )}
+
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "11.5px", lineHeight: "1.5" }}>
+              
 
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "11.5px", lineHeight: "1.5" }}>
                 🔒 Your data is used solely for this advocacy petition. We do not sell or share personal information.
