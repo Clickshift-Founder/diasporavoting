@@ -6,7 +6,7 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN })
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, country, message } = await req.json();
+    const { name, email, country, organization, message } = await req.json();
 
     // Basic validation
     if (!name || !email || !country) {
@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
           Name: name,
           Email: email,
           Country: country,
+          organization: organization,
           Message: message || "",
           Source: "Landing Page",
         },

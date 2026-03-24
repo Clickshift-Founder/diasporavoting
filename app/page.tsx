@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from 'next/image';
 
 // ─── TYPES ──────────────────────────────────────────────────────────────────
 interface AnimatedNumberProps {
@@ -14,6 +15,7 @@ interface FormData {
   email: string;
   country: string;
   message: string;
+  organization: string;
 }
 
 interface PetitionModalProps {
@@ -146,7 +148,7 @@ function AnimatedNumber({ target, duration = 2000, prefix = "", suffix = "" }: A
 // ─── PETITION MODAL ──────────────────────────────────────────────────────────
 function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
   const [step, setStep] = useState(1); // 1=form, 2=thank you
-  const [form, setForm] = useState<FormData>({ name: "", email: "", country: "", message: "" });
+  const [form, setForm] = useState<FormData>({ name: "", email: "", country: "", organization: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string | null>>({});
 
@@ -322,6 +324,20 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
                 </select>
                 {errors.country && <span style={{ color: "#e74c3c", fontSize: "12px" }}>{errors.country}</span>}
               </div>
+
+                      <div>
+          <label style={{ color: "var(--gold)", fontSize: "12px", fontFamily: "'DM Mono',monospace", letterSpacing: "1px", display: "block", marginBottom: "8px" }}>
+            ORGANIZATION <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px" }}>(optional)</span>
+          </label>
+          <input
+            placeholder="e.g. Raydium Tech; Technology Sector..."
+            value={form.organization}
+            onChange={e => setForm({...form, organization: e.target.value})}
+            style={inputStyle("occupation")}
+            onFocus={e => (e.currentTarget as HTMLElement).style.borderColor = "var(--gold)"}
+            onBlur={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,168,76,0.3)"}
+          />
+        </div>
 
               <div>
                 <label style={{ color: "var(--gold)", fontSize: "12px", fontFamily: "'DM Mono',monospace", letterSpacing: "1px", display: "block", marginBottom: "8px" }}>
@@ -862,7 +878,7 @@ useEffect(() => {
                 height: "240px", position: "relative",
               }}>
                 <img
-                  src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80"
+                  src="/nigeriansindiaspora.jpeg"
                   alt="Nigerians voting"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
