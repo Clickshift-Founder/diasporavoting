@@ -470,7 +470,7 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
                 ))}
               </div>
             </div>
-            https://drive.google.com/file/d/1OntMOsZR3ESPyuyjKZhYPL0bflweoMf-/view?usp=sharing
+           
 
             {/* Download button */}
             <a
@@ -639,12 +639,14 @@ useEffect(() => {
         overflow: "hidden",
       }}>
         {/* Background image */}
-        <div style={{
-          position: "absolute", inset: 0,
-          backgroundImage: "url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=1400&q=80')",
-          backgroundSize: "cover", backgroundPosition: "center 30%",
-          filter: "brightness(0.25)",
-        }} />
+       <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "url('/votersadvocacy.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center 30%",
+        filter: "brightness(0.25)",
+      }} />
         {/* Gradient overlay */}
         <div style={{
           position: "absolute", inset: 0,
@@ -1062,7 +1064,7 @@ useEffect(() => {
             <div data-reveal="global-right" style={{ ...revealStyle("global-right", 0.2), display: "flex", flexDirection: "column", gap: "20px" }}>
               <div style={{ borderRadius: "16px", overflow: "hidden", height: "300px" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=800&q=80"
+                  src="/voteabroad.jpeg"
                   alt="African parliament"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -1211,7 +1213,7 @@ useEffect(() => {
                   A comprehensive policy & advocacy memorandum presenting the democratic, economic, and legal case for immediate constitutional reform
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px" }}>
-                  {["13 Pages", "10 Sections", "Global Data", "Legal Analysis", "Action Plan"].map(t => (
+                  {["8 Pages", "10 Sections", "Global Data", "Legal Analysis", "Action Plan"].map(t => (
                     <span key={t} style={{
                       background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.3)",
                       color: "var(--gold)", padding: "4px 10px", borderRadius: "20px",
