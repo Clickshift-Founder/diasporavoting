@@ -675,7 +675,7 @@ useEffect(() => {
             marginBottom: "32px",
             animation: "fadeUp 0.8s 0.2s both",
           }}>
-            <span style={{ fontSize: "16px" }}>🇳🇬</span>
+            <span style={{ color: "white", fontSize: "16px" }}>🇳🇬</span>
             <span style={{ color: "var(--gold)", fontSize: "12px", fontFamily: "'DM Mono',monospace", letterSpacing: "1.5px" }}>
               #FIXPOLITICS DIASPORA INITIATIVE · FEBRUARY 2026
             </span>
@@ -1032,7 +1032,7 @@ useEffect(() => {
               </p>
 
               {/* Country grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(110px, 1fr))", gap: "10px" }}>
+              <div style={{ color: "white", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(110px, 1fr))", gap: "10px" }}>
                 {[
                   { flag: "🇸🇳", country: "Senegal", year: "2006", note: "15 diaspora seats" },
                   { flag: "🇿🇦", country: "South Africa", year: "1994", note: "Full rights" },
@@ -1228,10 +1228,10 @@ useEffect(() => {
             <div data-reveal="report-right" style={revealStyle("report-right", 0.2)}>
               <div style={{ color: "var(--gold)", fontFamily: "'DM Mono',monospace", fontSize: "12px", letterSpacing: "2px", marginBottom: "16px" }}>THE POLICY REPORT</div>
               <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(28px,4vw,40px)", color: "var(--forest)", lineHeight: "1.2", marginBottom: "20px" }}>
-                The Most Comprehensive<br/><em>Diaspora Voting Document</em><br/>Ever Produced for Nigeria
+                A Comprehensive<br/><em>Diaspora Voting Document</em><br/>Ever Produced for Nigeria
               </h2>
               <p style={{ fontSize: "16px", lineHeight: "1.8", color: "var(--charcoal)", marginBottom: "28px" }}>
-                Sign the petition and gain immediate access to the full 13-page policy and advocacy 
+                Sign the petition and gain immediate access to the full 8-page policy and advocacy 
                 memorandum — packed with original research, legal analysis, global comparisons, 
                 a phased implementation roadmap, and direct recommendations to the National Assembly.
               </p>
@@ -1241,7 +1241,7 @@ useEffect(() => {
                   "✓  Updated 2024 remittance data and economic analysis",
                   "✓  Constitutional law breakdown — exactly what must change",
                   "✓  Lessons from 30+ African diaspora voting models",
-                  "✓  Phased implementation roadmap for 2027 elections",
+                  "✓  Phased implementation roadmap for 2031 elections",
                   "✓  Specific recommendations to NASS, INEC, Presidency",
                 ].map((point, i) => (
                   <div key={i} style={{ color: "var(--charcoal)", fontSize: "15px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
@@ -1289,13 +1289,13 @@ useEffect(() => {
           backgroundImage: "radial-gradient(circle at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 50%)",
         }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: "700px", margin: "0 auto" }}>
-          <div style={{ fontSize: "48px", marginBottom: "16px" }}>🇳🇬</div>
+          <div style={{ color: "white", fontSize: "48px", marginBottom: "16px" }}>🇳🇬</div>
           <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(28px,5vw,44px)", color: "white", lineHeight: "1.3", marginBottom: "20px" }}>
             Every Signature Is a Vote<br/><em style={{ color: "var(--gold)" }}>For the Right to Vote</em>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "17px", lineHeight: "1.7", marginBottom: "40px" }}>
-            The 2027 elections are the natural target. With constitutional amendments passed in 2026, 
-            diaspora Nigerians could vote for the first time in history. But only if we demand it — together.
+            The 2031 elections are the natural target. With a constitutional amendments passed before 2031, 
+            diaspora Nigerians will be able to vote for the first time in history. But only if we demand it — together.
           </p>
           <button
             onClick={() => setShowModal(true)}
