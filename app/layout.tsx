@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: "Why Diaspora Voting Matters Beyond Policy",
     description: "Sign the petition. Download the report. Demand democratic inclusion.",
-    images: ["https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=1200"],
+    images: ["/nigeriansindiaspora.jpeg"],
   },
 };
 
