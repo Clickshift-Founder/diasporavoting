@@ -920,7 +920,7 @@ useEffect(() => {
                   padding: "8px 14px", borderRadius: "8px",
                   color: "white", fontSize: "12px", fontFamily: "'DM Mono',monospace",
                 }}>
-                  🇳🇬 Nigerian voters — 2023 general elections
+                  2025 Diaspora Advocacy at the National Assembly
                 </div>
               </div>
 
