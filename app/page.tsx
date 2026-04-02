@@ -474,7 +474,7 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
 
             {/* Download button */}
             <a
-              href="https://drive.google.com/uc?export=download&id=1OntMOsZR3ESPyuyjKZhYPL0bflweoMf"
+              href="https://drive.google.com/uc?export=download&id=1OntMOsZR3ESPyuyjKZhYPL0bflweoMf-"
               target="_blank"
               rel="noopener noreferrer"
               onClick={onSigned}
