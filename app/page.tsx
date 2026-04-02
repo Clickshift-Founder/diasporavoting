@@ -455,9 +455,9 @@ function PetitionModal({ onClose, onSigned, sigCount }: PetitionModalProps) {
               </p>
               <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
                 {[
-                  { icon: "𝕏", label: "Share on X", color: "#000", bg: "white", href: "https://twitter.com/intent/tweet?text=I+just+signed+the+petition+for+%23DiasporaVoting+in+Nigeria.+20M+Nigerians+abroad+deserve+the+right+to+vote.+Join+me+%40FixPolitics+%23FixPolitics&url=https%3A%2F%2Ffixpolitics.org" },
-                  { icon: "in", label: "LinkedIn", color: "white", bg: "#0077b5", href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ffixpolitics.org" },
-                  { icon: "💬", label: "WhatsApp", color: "white", bg: "#25D366", href: "https://wa.me/?text=I+just+signed+the+petition+for+Diaspora+Voting+in+Nigeria.+Join+me+and+add+your+voice+for+democratic+inclusion+%E2%80%94+https%3A%2F%2Ffixpolitics.org" },
+                  { icon: "𝕏", label: "Share on X", color: "#000", bg: "white", href: "https://twitter.com/intent/tweet?text=I+just+signed+the+petition+for+%23DiasporaVoting+in+Nigeria.+20M+Nigerians+abroad+deserve+the+right+to+vote.+Join+me+%40FixPolitics+%23FixPolitics&url=https%3A%2F%2Fdiasporavoting.vercel.app" },
+                  { icon: "in", label: "LinkedIn", color: "white", bg: "#0077b5", href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdiasporavoting.vercel.app" },
+                  { icon: "💬", label: "WhatsApp", color: "white", bg: "#25D366", href: "https://wa.me/?text=I+just+signed+the+petition+for+Diaspora+Voting+in+Nigeria.+Join+me+and+add+your+voice+for+democratic+inclusion+%E2%80%94+https%3A%2F%2Fdiasporavoting.vercel.app" },
                 ].map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{
                     background: s.bg, color: s.color,
