@@ -717,8 +717,8 @@ useEffect(() => {
             animation: "fadeUp 0.8s 0.55s both",
           }}>
             They send home <strong style={{ color: "var(--gold)" }}>$20.93 billion every year.</strong> They build 
-            hospitals, fund schools, and keep families alive. They are Nigeria's biggest 
-            financial lifeline. And they cannot vote.
+            hospitals, fund schools, and keep families alive. They are Nigeria's 
+            most significant economic support community. And they cannot vote.
           </p>
 
           {/* CTA Buttons */}
