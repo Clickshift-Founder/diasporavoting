@@ -857,6 +857,162 @@ useEffect(() => {
         </div>
       </div>
 
+      {/* ── DOCUMENT READER ── */}
+<section style={{ background: "var(--ivory)", padding: "80px 32px 60px" }}>
+  <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+
+    {/* Section label */}
+    <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
+      <div style={{ height: "3px", width: "48px", background: "var(--gold)", flexShrink: 0 }} />
+      <span style={{ color: "var(--gold)", fontFamily: "'DM Mono',monospace", fontSize: "12px", letterSpacing: "2px" }}>
+        READ BEFORE YOU SIGN
+      </span>
+    </div>
+
+    <h2 style={{
+      fontFamily: "'Playfair Display', serif",
+      fontSize: "clamp(26px, 4vw, 40px)",
+      color: "var(--forest)",
+      lineHeight: "1.2",
+      marginBottom: "12px",
+    }}>
+      The Full Policy Report —<br/>
+      <em>Read It. Then Add Your Voice.</em>
+    </h2>
+
+    <p style={{
+      fontSize: "16px", lineHeight: "1.8",
+      color: "var(--charcoal)", marginBottom: "32px", maxWidth: "680px",
+    }}>
+      This is the complete policy and advocacy memorandum prepared for the National Assembly.
+      Read it in full below, then sign the petition at the bottom to add your name to the formal
+      legislative record.
+    </p>
+
+    {/* PDF Embed */}
+    <div style={{
+      border: "2px solid var(--gold)",
+      borderRadius: "12px",
+      overflow: "hidden",
+      boxShadow: "0 8px 40px rgba(0,0,0,0.12)",
+      background: "#f0f0f0",
+    }}>
+      {/* Document header bar */}
+      <div style={{
+        background: "var(--forest)",
+        padding: "14px 24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "18px" }}>📄</span>
+          <span style={{
+            color: "white", fontSize: "13px",
+            fontFamily: "'DM Mono',monospace", letterSpacing: "0.5px",
+          }}>
+            Why Diaspora Voting Matters Beyond Policy · #FixPolitics Diaspora Initiative · Feb 2026
+          </span>
+        </div>
+        
+          href="https://drive.google.com/uc?export=download&confirm=t&id=1OntMOsZR3ESPyuyjKZhYPL0bflweoMf-"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            background: "rgba(201,168,76,0.2)",
+            border: "1px solid var(--gold)",
+            color: "var(--gold)",
+            padding: "6px 14px",
+            borderRadius: "6px",
+            fontSize: "11px",
+            fontFamily: "'DM Mono',monospace",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          ↓ Download PDF
+        </a>
+      </div>
+
+      {/* The PDF iframe */}
+      <iframe
+        src="https://drive.google.com/file/d/1OntMOsZR3ESPyuyjKZhYPL0bflweoMf-/preview"
+        style={{
+          width: "100%",
+          height: "780px",
+          border: "none",
+          display: "block",
+        }}
+        allow="autoplay"
+        title="Why Diaspora Voting Matters Beyond Policy"
+      />
+    </div>
+
+    {/* Sign CTA below document */}
+    <div style={{
+      marginTop: "40px",
+      background: "var(--forest)",
+      borderRadius: "16px",
+      padding: "40px 36px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      flexWrap: "wrap",
+      gap: "24px",
+      border: "2px solid var(--gold)",
+    }}>
+      <div>
+        <div style={{
+          color: "var(--gold)", fontSize: "11px",
+          fontFamily: "'DM Mono',monospace", letterSpacing: "2px",
+          marginBottom: "8px",
+        }}>
+          YOU'VE READ IT. NOW ACT.
+        </div>
+        <h3 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "clamp(20px, 3vw, 28px)",
+          color: "white", lineHeight: "1.3", margin: 0,
+        }}>
+          Add your name to the<br/>
+          <em style={{ color: "var(--gold)" }}>official petition record.</em>
+        </h3>
+        <p style={{
+          color: "rgba(255,255,255,0.6)", fontSize: "14px",
+          lineHeight: "1.6", marginTop: "10px", marginBottom: 0,
+          maxWidth: "420px",
+        }}>
+          Your signature joins thousands of Nigerians demanding constitutional change.
+          It will be formally presented to the House of Representatives and Senate.
+        </p>
+      </div>
+      <button
+        onClick={() => setShowModal(true)}
+        style={{
+          background: "linear-gradient(135deg, var(--gold), var(--gold-light))",
+          color: "var(--forest)",
+          border: "none",
+          padding: "20px 36px",
+          borderRadius: "12px",
+          cursor: "pointer",
+          fontSize: "16px",
+          fontWeight: "700",
+          fontFamily: "'Playfair Display', serif",
+          boxShadow: "0 8px 32px rgba(201,168,76,0.4)",
+          whiteSpace: "nowrap",
+          transition: "all 0.2s",
+          animation: "pulse 2.5s infinite",
+        }}
+        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px) scale(1.02)"; }}
+        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
+      >
+        ✍️ Sign the Petition Now
+      </button>
+    </div>
+
+  </div>
+</section>
+
       {/* ── THE CRISIS ── */}
       <section id="the-case" style={{ background: "var(--ivory)", padding: "100px 32px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
