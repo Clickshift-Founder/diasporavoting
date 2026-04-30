@@ -857,6 +857,7 @@ useEffect(() => {
         </div>
       </div>
 
+
       {/* ── DOCUMENT READER ── */}
 <section style={{ background: "var(--ivory)", padding: "80px 32px 60px" }}>
   <div style={{ maxWidth: "900px", margin: "0 auto" }}>
@@ -911,7 +912,7 @@ useEffect(() => {
             color: "white", fontSize: "13px",
             fontFamily: "'DM Mono',monospace", letterSpacing: "0.5px",
           }}>
-            Why Diaspora Voting Matters Beyond Policy · #FixPolitics Diaspora Initiative · Feb 2026
+            Why Diaspora Voting Matters Beyond Policy · #FixPolitics · Feb 2026
           </span>
         </div>
         
@@ -967,7 +968,7 @@ useEffect(() => {
           fontFamily: "'DM Mono',monospace", letterSpacing: "2px",
           marginBottom: "8px",
         }}>
-          YOU'VE READ IT. NOW ACT.
+          YOU&apos;VE READ IT. NOW ACT.
         </div>
         <h3 style={{
           fontFamily: "'Playfair Display', serif",
@@ -1013,6 +1014,7 @@ useEffect(() => {
   </div>
 </section>
 
+      
       {/* ── THE CRISIS ── */}
       <section id="the-case" style={{ background: "var(--ivory)", padding: "100px 32px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
