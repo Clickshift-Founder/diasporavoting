@@ -722,50 +722,55 @@ useEffect(() => {
           </p>
 
           {/* CTA Buttons */}
-          <div style={{
-            display: "flex", gap: "16px", flexWrap: "wrap",
-            animation: "fadeUp 0.8s 0.65s both",
-          }}>
-            <button
-              onClick={() => setShowModal(true)}
-              style={{
-                background: "linear-gradient(135deg, var(--gold), var(--gold-light))",
-                color: "var(--forest)",
-                border: "none",
-                padding: "20px 36px",
-                borderRadius: "12px",
-                cursor: "pointer",
-                fontSize: "17px",
-                fontWeight: "700",
-                fontFamily: "'Playfair Display', serif",
-                animation: "pulse 2.5s 2s infinite",
-                transition: "transform 0.2s, box-shadow 0.2s",
-                boxShadow: "0 8px 32px rgba(201,168,76,0.35)",
-              }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px rgba(201,168,76,0.5)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(201,168,76,0.35)"; }}
-            >
-              ✍️ Sign the Petition &amp; Download Report
-            </button>
-            <a href="#the-case" style={{
-              background: "rgba(255,255,255,0.08)",
-              backdropFilter: "blur(8px)",
-              color: "white",
-              border: "1.5px solid rgba(255,255,255,0.2)",
-              padding: "20px 32px",
+        <div style={{
+          display: "flex", gap: "16px", flexWrap: "wrap",
+          animation: "fadeUp 0.8s 0.65s both",
+        }}>
+          {/* ✅ Now scrolls to document reader instead of opening modal */}
+          
+            <a href="#document-reader"
+            style={{
+              background: "linear-gradient(135deg, var(--gold), var(--gold-light))",
+              color: "var(--forest)",
+              border: "none",
+              padding: "20px 36px",
               borderRadius: "12px",
               cursor: "pointer",
-              fontSize: "16px",
-              fontFamily: "'Source Serif 4', serif",
+              fontSize: "17px",
+              fontWeight: "700",
+              fontFamily: "'Playfair Display', serif",
+              animation: "pulse 2.5s 2s infinite",
+              transition: "transform 0.2s, box-shadow 0.2s",
+              boxShadow: "0 8px 32px rgba(201,168,76,0.35)",
               textDecoration: "none",
-              transition: "all 0.2s",
+              display: "inline-block",
             }}
-              onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.14)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
-            >
-              Read the Case →
-            </a>
-          </div>
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 48px rgba(201,168,76,0.5)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(201,168,76,0.35)"; }}
+          >
+            📄 Read the Report &amp; Sign
+          </a>
+
+          {/* ✅ Also points to document reader */}
+          <a href="#document-reader" style={{
+            background: "rgba(255,255,255,0.08)",
+            backdropFilter: "blur(8px)",
+            color: "white",
+            border: "1.5px solid rgba(255,255,255,0.2)",
+            padding: "20px 32px",
+            borderRadius: "12px",
+            cursor: "pointer",
+            fontSize: "16px",
+            fontFamily: "'Source Serif 4', serif",
+            textDecoration: "none",
+            transition: "all 0.2s",
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.14)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
+          >
+            Read the Case →
+          </a>
+        </div>
 
           {/* Live counter bar */}
           <div style={{
@@ -859,7 +864,7 @@ useEffect(() => {
 
 
       {/* ── DOCUMENT READER ── */}
-<section style={{ background: "var(--ivory)", padding: "80px 32px 60px" }}>
+<section id="document-reader" style={{ background: "var(--ivory)", padding: "80px 32px 60px" }}>
   <div style={{ maxWidth: "900px", margin: "0 auto" }}>
 
     {/* Section label */}
@@ -916,7 +921,7 @@ useEffect(() => {
           </span>
         </div>
         
-         <a href="https://drive.google.com/uc?export=download&confirm=t&id=1OntMOsZR3ESPyuyjKZhYPL0bflweoMf-"
+         <a href="https://docs.google.com/document/d/1leERQ1x1IuvskQjrf8vZaePSrWksqOM7fqWPDWpM7LU/preview"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -931,9 +936,9 @@ useEffect(() => {
             whiteSpace: "nowrap",
           }}
         >
-          ↓ Download PDF
-        </a>
-      </div>
+          📋 Executive Summary
+        </a> </div>
+        
 
       {/* The PDF iframe */}
       <iframe
